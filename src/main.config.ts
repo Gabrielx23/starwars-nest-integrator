@@ -1,3 +1,5 @@
+import { UserEntity } from './User/user.entity';
+
 export const mainConfig = () => ({
   port: Number(process.env.PORT),
   jwtSecret: process.env.JWT_SECRET,
@@ -10,6 +12,6 @@ export const mainConfig = () => ({
     database: process.env.DB_DATABASE,
     synchronize: true,
     logging: false,
-    entities: [],
+    entities: [UserEntity],
   },
 });
