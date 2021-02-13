@@ -1,6 +1,7 @@
 ## tl;dr
 
-Star Wars API integrator. API docs for project are available with Swagger documentation at `/api`.
+Star Wars API integrator. API docs for the project are available with a Swagger documentation at `/api`.
+Run `docker-compose up --build -V -d` and go to `http://localhost:3000/api`
 
 ## Description
 Sign up. Users should provide an email and password to create their account. During the

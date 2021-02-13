@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { forwardRef, Module } from '@nestjs/common';
 import { controllers } from './Controllers';
 import { UserRepository } from './Repositories/user.repository';
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -9,7 +9,7 @@ import { UserService } from './Services/user.service';
 import { SWResourceModule } from '../SWResource/sw-resource.module';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([UserRepository]), SWResourceModule],
+  imports: [TypeOrmModule.forFeature([UserRepository]), forwardRef(() => SWResourceModule)],
   controllers: [...controllers],
   providers: [...services],
   exports: [CreateUserService, AuthService, UserService],
